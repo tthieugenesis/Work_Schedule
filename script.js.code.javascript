@@ -1,5 +1,5 @@
 // DÁN URL BẠN VỪA COPY TỪ APPS SCRIPT VÀO ĐÂY
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqS43rb4ajwccIqeY9L7tSa0hJc1--LxvEF5a20AKiSJVOYOG3Abc28j_Eld0dcvWc/exec'; 
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6UC4hTZlraHle5U1ex35dBcwooMCvfbSeGBzUGX9CpI82EtT18i5UqeDWbsMd2g5k6A/exec'; 
 
 async function loadData() {
     try {
