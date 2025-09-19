@@ -9,6 +9,7 @@ let filteredData = [];
 const gridContainer = document.getElementById('schedule-grid');
 const employeeFilter = document.getElementById('employee-filter');
 const shiftFilter = document.getElementById('shift-filter');
+const dateFilter = document.getElementById('date-filter');
 
 // Load data from Google Apps Script
 async function loadData() {
@@ -58,11 +59,13 @@ function populateFilters() {
 function filterData() {
     const selectedEmployee = employeeFilter.value;
     const selectedShift = shiftFilter.value;
+    const selectedDate = shiftDate.value;
     
     filteredData = allData.filter(item => {
         const employeeMatch = selectedEmployee === 'all' || item["Tên nhân viên"] === selectedEmployee;
         const shiftMatch = selectedShift === 'all' || item["Ca đăng ký"] === selectedShift;
-        return employeeMatch && shiftMatch;
+        const shiftDate = selectedDate === 'all' || item["Ngày đăng ký"] === selectedDate;
+        return employeeMatch && shiftMatch && dateMatch;
     });
     
     renderGrid();
@@ -197,6 +200,7 @@ function formatDateWithWeekday(dateString) {
 // Event listeners
 employeeFilter.addEventListener('change', filterData);
 shiftFilter.addEventListener('change', filterData);
+dateFilter.addEventListener('change', filterData);
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
